@@ -17,6 +17,8 @@
         </activity>
 
         <activity android:name=".UploadActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".FinalActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
     </application>
 
 
