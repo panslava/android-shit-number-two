@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Podcasts</string>
+    <string name="back">Back</string>
+    <string name="TargetImgDescription">target</string>
+    <string name="RegularImageDescription">Regular</string>
+    <string name="ProceedImageDescription">Proceed</string>
 </resources>
