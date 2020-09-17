@@ -6,7 +6,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/upload_activity_back"
@@ -213,6 +213,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="Редактировать аудиозапись"
                     android:textAllCaps="false"
+                    android:onClick="onEditClick"
                     android:textColor="#3F8AE0"
                     android:textSize="16sp"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -402,6 +403,8 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/button_disable"
             android:text="Далее"
+            android:clickable="false"
+            android:onClick="buttonOnClick"
             android:textColor="#ffffff"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

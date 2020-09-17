@@ -21,6 +21,9 @@
 
         <activity android:name=".UploadActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".FinalActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".EditActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".MusicActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".ResultPreviewActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
     </application>
 

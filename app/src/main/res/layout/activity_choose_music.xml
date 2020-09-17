@@ -13,7 +13,7 @@
         android:layout_marginTop="44dp"
         android:clickable="true"
         android:contentDescription="@string/back"
-        android:onClick="back"
+        android:onClick="backOnClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toLeftOf="@id/choose_music_header"

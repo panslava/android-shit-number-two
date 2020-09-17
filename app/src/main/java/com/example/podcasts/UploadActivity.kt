@@ -122,7 +122,7 @@ class UploadActivity : AppCompatActivity() {
             upload_filename.text = filePath
             upload_center_not_uploaded.visibility = View.INVISIBLE
             upload_center_uploaded.visibility = View.VISIBLE
-
+            upload_next_button.isClickable = true
             upload_next_button.background = ContextCompat.getDrawable(this, R.drawable.blue_button)
         }
     }
@@ -196,6 +196,17 @@ class UploadActivity : AppCompatActivity() {
             startPickingImage()
         }
     }
+
+    fun onEditClick(view: View) {
+        val intent = Intent(this, EditActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun buttonOnClick(view: View) {
+        val intent = Intent(this, ResultPreviewActivity::class.java)
+        startActivity(intent)
+    }
+
 
     fun backOnClick(view: View) {
         finish()
