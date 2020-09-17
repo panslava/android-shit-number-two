@@ -9,29 +9,119 @@
         android:id="@+id/choose_music_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="44dp"
         android:clickable="true"
         android:contentDescription="@string/back"
         android:onClick="back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="@id/choose_music_header"
+        app:layout_constraintRight_toLeftOf="@id/choose_music_header"
         app:srcCompat="@drawable/ic_back_icon" />
 
     <TextView
         android:id="@+id/choose_music_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Редактирование"
-        android:fontFamily="sans-serif-medium"
+        android:text="Выбрать музыку"
         android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="@id/choose_music_back"
-        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toRightOf="@id/choose_music_back"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginLeft="27dp"
         />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/ic_add"
+        android:layout_marginTop="44dp"
+        android:layout_marginRight="18dp"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/choose_music_search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/gray_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choose_music_header"
+        app:layout_constraintBottom_toTopOf="@id/choose_music_track1_layout"
+        >
+
+        <ImageView
+            android:id="@+id/choose_music_search_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/choose_music_search_edit"
+            />
+
+        <EditText
+            android:id="@+id/choose_music_search_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Поиск"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/choose_music_microphone"
+            app:layout_constraintLeft_toRightOf="@id/choose_music_search_icon"
+            android:background="@null"
+            />
+
+        <ImageView
+            android:id="@+id/choose_music_microphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_microphone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/choose_music_search_edit"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/choose_music_track1_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/choose_music_search_layout"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/first_chooose_music"
+            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width=""
+            android:layout_height=""
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3:30"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_dots_menu"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
