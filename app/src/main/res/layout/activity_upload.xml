@@ -1,79 +1,411 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ImageView
-        android:id="@+id/upload_activity_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_arrow_left"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="backOnClick"
-        android:clickable="true"
-        android:focusable="true" />
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/upload_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toRightOf="@id/upload_activity_back"
-        app:layout_constraintTop_toTopOf="@id/upload_activity_back"
-        app:layout_constraintBottom_toBottomOf="@id/upload_activity_back"
-        android:layout_marginStart="27dp"
-        android:textColor="#000000"
-        android:text="Новый подкаст"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="24sp"
-        />
-    
-    <View
-        android:id="@+id/upload_header_line"
-        android:layout_width="0dp"
-        android:layout_height="0.5dp"
-        android:background="#D7D8D9"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/upload_header"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="14dp"/>
-    
-    
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/upload_image_overlay"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        app:layout_constraintTop_toBottomOf="@id/upload_header_line"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:background="@drawable/gray_with_border"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="16dp"
-
-        >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/upload_image_icon"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/ic_image"
+            android:id="@+id/upload_activity_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="backOnClick"
+            android:src="@drawable/ic_arrow_left"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/upload_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Новый подкаст"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/upload_activity_back"
+            app:layout_constraintLeft_toRightOf="@id/upload_activity_back"
+            app:layout_constraintTop_toTopOf="@id/upload_activity_back" />
+
+        <View
+            android:id="@+id/upload_header_line"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="16dp"
+            android:background="#D7D8D9"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:contentDescription="upload image"
-            />
+            app:layout_constraintTop_toBottomOf="@id/upload_header" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/upload_image_overlay"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/gray_with_border"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_header_line"
+
+            >
+
+            <ImageView
+                android:id="@+id/upload_image_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:contentDescription="upload image"
+                android:src="@drawable/ic_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
             android:id="@+id/upload_image_preview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round_image"
             android:scaleType="centerCrop"
-            />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_header_line" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Название"
+            android:textColor="#6D7885"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/upload_name_input"
+            app:layout_constraintLeft_toLeftOf="@id/upload_name_input" />
+
+        <EditText
+            android:id="@+id/upload_name_input"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/gray_input"
+            android:hint="Введите название подкаста"
+            android:padding="12dp"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/upload_image_overlay"
+            app:layout_constraintLeft_toRightOf="@id/upload_image_overlay"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/upload_description_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="Описание подкаста"
+            android:textColor="#6D7885"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_name_input" />
+
+        <EditText
+            android:id="@+id/upload_description_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/gray_input"
+            android:lineHeight="20sp"
+            android:minLines="2"
+            android:paddingLeft="12dp"
+            android:paddingTop="8dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="12dp"
+            android:textSize="16sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_description_header" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/upload_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_description_input">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/upload_center_uploaded"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginRight="16dp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <ImageView
+                    android:id="@+id/upload_mic_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gray_view"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_mic"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/upload_filename"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="My_podcast.mp3"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/upload_mic_icon"
+                    app:layout_constraintLeft_toRightOf="@id/upload_mic_icon"
+                    app:layout_constraintRight_toLeftOf="@id/upload_length"
+                    app:layout_constraintTop_toTopOf="@id/upload_mic_icon" />
+
+                <TextView
+                    android:id="@+id/upload_length"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="59:16"
+                    android:textColor="#99A2AD"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@id/upload_mic_icon"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/upload_mic_icon" />
+
+                <TextView
+                    android:id="@+id/upload_edit_tip"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Вы можете добавить таймкоды и скорректировать подкаст в режиме редактирования"
+                    android:textColor="#818C99"
+                    android:textSize="13sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/upload_mic_icon" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/blue_button_stroke"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Редактировать аудиозапись"
+                    android:textAllCaps="false"
+                    android:textColor="#3F8AE0"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/upload_edit_tip" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/upload_center_not_uploaded"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginRight="16dp"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <TextView
+                    android:id="@+id/upload_upload_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Загрузите ваш подкаст"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/upload_upload_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineHeight="20dp"
+                    android:text="Выберите готовый аудиофайл из\nвашего телефона и добавьте его"
+                    android:textAlignment="center"
+                    android:textColor="#818C99"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/upload_upload_header" />
+
+
+                <Button
+                    android:id="@+id/upload_upload_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/blue_button_stroke"
+                    android:onClick="onAudioUploadButton"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="Загрузить файл"
+                    android:textAllCaps="false"
+                    android:textColor="#3F8AE0"
+                    android:textSize="15sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/upload_upload_tip" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/upload_upload_separator"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="4.5dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="4.5dp"
+            android:background="#D7D8D9"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_center" />
+
+        <CheckBox
+            android:id="@+id/upload_check_explicit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="14dp"
+            android:button="@drawable/custom_checkbox"
+            android:paddingLeft="11dp"
+            android:paddingBottom="2dp"
+            android:text="Ненормативный контент"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_upload_separator" />
+
+        <CheckBox
+            android:id="@+id/upload_check_eject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="28dp"
+            android:button="@drawable/custom_checkbox"
+            android:paddingLeft="11dp"
+            android:paddingBottom="2dp"
+            android:text="Исключить эписод из экспорта"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_check_explicit" />
+
+        <CheckBox
+            android:id="@+id/upload_check_trailer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="28dp"
+            android:button="@drawable/custom_checkbox"
+            android:paddingLeft="11dp"
+            android:paddingBottom="2dp"
+            android:text="Трейлер подкаста"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_check_eject" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/upload_available_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_check_trailer">
+
+            <TextView
+                android:id="@+id/upload_available_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Кому доступен данный подкаст"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Всем пользователям"
+                android:textColor="#818C99"
+                android:textSize="11sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upload_available_header"
+
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_arrow_right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/upload_available_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="5dp"
+            android:text="При публикации записи с эпизодом, он становится\nдоступным для всех пользователей"
+            android:textColor="#818C99"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_available_overlay" />
+
+        <Button
+            android:id="@+id/upload_next_button"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/button_disable"
+            android:text="Далее"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/upload_available_tip" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
